@@ -64,21 +64,18 @@ This view from the AWS Console shows the two active EC2 instances (**t3.medium**
 ## 4.1 Development Insights & Technical Competency
 This deployment offered a practical deep dive into the lifecycle of cloud-native systems. A key takeaway was the critical dependency between Kubernetes cluster stability and the underlying network architecture. Moving beyond basic script execution, I gained a functional understanding of AWS Security Groups, VPC traffic routing, and the implementation of secure node-to-node authentication via cluster tokens. Differentiating between the Control Plane (Master) and the Agent (Worker) provided a clear perspective on how state and high availability are managed across a distributed virtual environment.
 
-## 4.2 Challenges and Resolutions
-The most significant challenge I encountered was a **"Permission Denied (403)"** error when attempting to push my progress to the GitHub repository. Initially, I believed this was a local credential issue, but after troubleshooting, I realized it was due to a lack of write access to the organization’s template. I resolved this by ensuring my local environment was correctly mapped to my personal GitHub Classroom repository.
+## 4.2 Technical Obstacles & Solutions
+A primary administrative hurdle was encountering a "Permission Denied (403)" error during the GitHub push process. While initially suspected to be a local authentication failure, troubleshooting revealed it was a permissions issue regarding the organization’s template. I successfully resolved this by re-mapping my local directory to my specific GitHub Classroom repository.
 
-Technically, I also faced a **Connection Timeout** while joining the worker node to the master. By auditing the AWS Security Groups, I discovered that **Port 6443 (K3s API)** and **UDP Port 8472 (Flannel VXLAN)** were not explicitly permitted. Once these inbound rules were applied to the master’s private IP range, the worker joined successfully and shifted to a "Ready" state. This highlighted the importance of **"Security by Design"** in cloud environments.
+From a technical standpoint, I faced a Connection Timeout when attempting to link the worker node. By performing a security audit on the AWS console, I identified that Port 6443 (API) and UDP Port 8472 (VXLAN) were restricted. Once I updated the master node's inbound rules to permit traffic from the worker's private range, the node status successfully transitioned to "Ready." This underscored the necessity of "Security by Design" in cloud deployments.
 
-## 4.3 K3s, 5G Cloud-Native, and Production Kubernetes
-K3s is a cornerstone of **5G Cloud-Native architecture**. In a production 5G ecosystem, low-latency processing must occur at the **"Edge"**—locations near cell towers where hardware resources (CPU/RAM) are limited. Standard Kubernetes (K8s) is often too resource-intensive for these sites. 
+## 4.3 K3s Integration in 5G Cloud-Native Frameworks
+K3s serves as a fundamental building block for 5G Cloud-Native architectures. Modern 5G networks require low-latency execution at the Network Edge, where hardware constraints make standard Kubernetes (K8s) impractical.
 
-
-
-K3s provides a lightweight, CNCF-compliant alternative that replaces the heavy etcd database with **SQLite**, allowing us to manage **Containerized Network Functions (CNFs)** with minimal overhead. This ensures that 5G services like the User Plane Function (UPF) can run efficiently on smaller, cost-effective hardware while maintaining the same orchestration power as a full-scale production cluster.
-
-## 4.4 Virtualization and Containerization for Scalability
-Virtualization and containerization work in tandem to enable scalable, elastic services. **Virtualization** (via AWS EC2) allows us to abstract physical hardware into multiple isolated virtual machines, providing the flexible foundation needed to deploy a cluster in minutes. **Containerization** (via K3s/containerd) then allows us to package applications and their dependencies into lightweight units that can be deployed across those virtual machines.
+By substituting the resource-intensive etcd database with SQLite, K3s offers a CNCF-compliant, lightweight alternative. This allows for the efficient management of Containerized Network Functions (CNFs) on smaller edge nodes. This ensures that critical 5G services, such as the User Plane Function (UPF), maintain high performance on cost-effective hardware while retaining the orchestration capabilities of a full-scale production environment.
 
 
+## 4.4 Scaling through Virtualization and Containerization
+The synergy between virtualization and containerization is the engine behind scalable, elastic cloud services. Virtualization (via AWS EC2) provides the abstracted hardware layer, allowing for the rapid deployment of isolated virtual machines. Containerization (via K3s/containerd) then enables applications and their dependencies to be packaged into efficient units for deployment across those machines.
 
-This combination enables **horizontal scaling**; if user demand on a 5G network spikes, we can programmatically provision new EC2 instances (Virtualization) and instantly deploy new pods (Containerization) to handle the traffic. This synergy is what allows modern cloud services to remain resilient, portable, and capable of scaling from a single user to millions seamlessly.
+This dual approach facilitates Horizontal Scaling; if 5G network demand surges, additional EC2 instances can be provisioned (Virtualization) and new pods can be immediately replicated (Containerization) to distribute the load. This ensures that the network remains portable, resilient, and highly responsive to user demand.
