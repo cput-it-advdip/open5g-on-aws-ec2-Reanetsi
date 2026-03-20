@@ -5,11 +5,11 @@
 
 ---
 
-## 🏗 Architecture Explanation
+## Explanation of the Architecture
 ### What is K3s?
 K3s is a highly available, certified Kubernetes distribution designed for low-resource environments such as Edge, IoT, and 5G infrastructures. It is packaged as a single binary (<100MB) by removing legacy, alpha, and non-default features found in standard upstream Kubernetes.
 
-### Key Components
+### The Key Components
 * **Control Plane:** The brain of the cluster, containing the API Server (entry point), Scheduler (assigns pods), and Controller Manager (maintains desired state).
 * **Agents (Worker Nodes):** The hosts where the actual containerized workloads run.
 * **Container Runtime:** Uses **containerd** as a lightweight, industry-standard runtime.
@@ -19,8 +19,7 @@ K3s is a highly available, certified Kubernetes distribution designed for low-re
 
 ---
 
-## 🖥 System Requirements
-The following AWS EC2 specifications were used to ensure a stable hybrid environment:
+## System Requirements that i used :
 
 | Requirement | Control Plane (Server) | Agent (Worker) |
 | :--- | :--- | :--- |
@@ -59,15 +58,11 @@ This view from the AWS Console shows the two active EC2 instances (**t3.medium**
 
 ![AWS Console](img/aws_Console.jpeg)
 
-## 3.4 Terminal Installation Output
-This screenshot captures the final terminal output after running the K3s installation and join commands, showing the successful communication between the local PowerShell environment and the AWS cloud instances.
-![Terminal Output](img/terminal_Output.png)
-
 
 ### 4. Technical Reflection
 
-## 4.1 Lessons Learned and Technical Growth
-This assignment provided a comprehensive look into the lifecycle of a cloud-native deployment. I learned that the functionality of a Kubernetes cluster is deeply dependent on the underlying infrastructure's networking configuration. Beyond just running installation scripts, I gained hands-on experience in managing **AWS Security Groups**, **VPC routing**, and **secure node-to-node authentication** using cluster tokens. Understanding the distinction between the **Control Plane (Master)** and the **Agent (Worker)** has clarified how distributed systems maintain high availability and state across multiple virtual machines.
+## 4.1 Development Insights & Technical Competency
+This deployment offered a practical deep dive into the lifecycle of cloud-native systems. A key takeaway was the critical dependency between Kubernetes cluster stability and the underlying network architecture. Moving beyond basic script execution, I gained a functional understanding of AWS Security Groups, VPC traffic routing, and the implementation of secure node-to-node authentication via cluster tokens. Differentiating between the Control Plane (Master) and the Agent (Worker) provided a clear perspective on how state and high availability are managed across a distributed virtual environment.
 
 ## 4.2 Challenges and Resolutions
 The most significant challenge I encountered was a **"Permission Denied (403)"** error when attempting to push my progress to the GitHub repository. Initially, I believed this was a local credential issue, but after troubleshooting, I realized it was due to a lack of write access to the organization’s template. I resolved this by ensuring my local environment was correctly mapped to my personal GitHub Classroom repository.
