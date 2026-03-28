@@ -26,6 +26,10 @@ This screenshot confirms that the K3s cluster is operational. It shows 3 master 
 
 ![Instances](img/Nodes_Instances.png)
 
+This screenshot shows the operating system i used on my instances.
+
+![Operatingsysstem](img/Operating_System.png).
+
 ## 3.2 System Pods and Networking Status
 
 ## 3.2.1 master 1 Nodes
@@ -49,6 +53,11 @@ The following output shows that master 3 nodes & pods are fully functional.
 ![Pods](img/Reyanesti_Nodes&Pods_Master3.png)
 
 ## 3.2.5 Final deployment
+
+This screenshot shows the final deployment of nodes 
+
+![Deployment](img/Deployment.png)
+
 
 ## System requirements
 | Requirement | Master |
