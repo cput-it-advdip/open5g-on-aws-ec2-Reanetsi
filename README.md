@@ -24,29 +24,29 @@ K3s bundles everything into a single binary, and it simplifies installation. It 
 ## 3.1 Cluster Node Status
 This screenshot confirms that the K3s cluster is operational. It shows 3 master nodes in a **Ready** status, running the latest K3s version.
 
-![Instance](screenshots/nodes_instances.jpeg)
+![Instance](img/nodes_instances.jpeg)
 
 ## 3.2 System Pods and Networking Status
 
 ## 3.2.1 master 1 Nodes
 The following output shows that master 1 nodes are fully functional.
 
-![Nodes](screenshots/Reyanesti_Nodes_Master1.png)
+![Nodes](img/Reyanesti_Nodes_Master1.png)
 
 ## 3.2.2 master 1 Pods
 The following output shows that master 1 pods are fully functional.
 
-![Pods](screenshots/Reah_Get_Ports_1.png)
+![Pods](img/Reah_Get_Ports_1.png)
 
 ## 3.2.3 master 2 nodes & pods
 The following output shows that master 2 nodes & pods are fully functional.
 
-![Pods](screenshots/Reyanesti_Nodes&Pods_master2.png)
+![Pods](img/Reyanesti_Nodes&Pods_master2.png)
 
 ## 3.2.4 master 3 nodes & pods
 The following output shows that master 3 nodes & pods are fully functional.
 
-![Pods](screenshots/Reyanesti_Nodes&Pods_Master3.png)
+![Pods](img/Reyanesti_Nodes&Pods_Master3.png)
 
 ## 3.2.5 Final deployment
 
