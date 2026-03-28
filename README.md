@@ -51,18 +51,17 @@ The following output shows that master 3 nodes & pods are fully functional.
 ## 3.2.5 Final deployment
 
 ## System Requirements that i used :
-
-| Requirement | Control Plane (Server) | Agent (Worker) |
+| Requirement | Master |
 | :--- | :--- | :--- |
 | **Instance Type** | t3.large |
-| **vCPU** | 2 | 1 |
-| **RAM** | 8 GB | 2 GB |
-| **Storage** | 50 GB gp3 SSD | 20 GB gp3 SSD |
-| **OS** | Ubuntu 22.04 LTS | Ubuntu 22.04 LTS |
+| **vCPU** | 2 |
+| **RAM** | 8 GB | 
+| **Storage** | 50 GB gp3 SSD | 
+| **OS** | Ubuntu 22.04 LTS | 
 
 ---
 
-## 🛠 Installation Steps & Commands
+## Installation Steps & Commands
 
 ### 1. Provisioning & Security
 Configured an AWS VPC with a Security Group allowing:
