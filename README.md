@@ -24,7 +24,7 @@ K3s bundles everything into a single binary, and it simplifies installation. It 
 ## 3.1 Cluster Node Status
 This screenshot confirms that the K3s cluster is operational. It shows 3 master nodes in a **Ready** status, running the latest K3s version.
 
-![Instance](img/nodes_instances.png)
+![Instance](img/Nodes_Instances.png)
 
 ## 3.2 System Pods and Networking Status
 
